@@ -132,7 +132,7 @@
 
         @if ($testing->file)
         <li>
-            <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#actionSheetInset">
+            <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#actionSheetInset2">
                 <div class="imageWrapper">
                     <img src="https://thumbs.dreamstime.com/b/file-folder-icon-flat-style-illustration-vector-web-design-128273206.jpg" alt="Webview" class="imaged w64">
                 </div>
@@ -145,7 +145,7 @@
             </a>
         </li>
 
-        <div class="modal fade action-sheet inset" id="actionSheetInset" tabindex="-1" role="dialog">
+        <div class="modal fade action-sheet inset" id="actionSheetInset2" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
