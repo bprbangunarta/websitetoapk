@@ -96,9 +96,9 @@ class TestingController extends Controller
 
                 $testing->fill($dataTesting);
                 $testing->save();
-
-                return redirect()->route('testing.upload.index')->with('success', 'File deleted successfully.');
             }
+
+            return back()->with('success', 'File deleted successfully.');
         } catch (\Exception $e) {
             // dd($e->getMessage());
             return back()->with('error', 'File deleted failed.');
