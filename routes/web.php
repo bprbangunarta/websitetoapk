@@ -3,11 +3,12 @@
 use App\Http\Controllers\TestingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::view('/contact', 'contact');
+Route::get('/', [TestingController::class, 'home'])->name('home');
+Route::get('contact', [TestingController::class, 'contact'])->name('contact');
 
 Route::prefix('testing')->group(function () {
     Route::get('upload', [TestingController::class, 'upload'])->name('testing.upload.index');

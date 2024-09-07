@@ -32,13 +32,13 @@
 <body>
     @yield('content')
     <div class="appBottomMenu">
-        <a href="/" class="item {{ Request::is('/', 'testing/upload', 'testing/embed'. 'testing/webcam') ? 'active' : '' }}">
+        <a href="{{ route('home') }}" class="item {{ Route::is('home', 'testing.upload.index' ,'testing.embed.index', 'testing.webcam.index') ? 'active' : '' }}">
             <div class="col">
                 <ion-icon name="home-outline"></ion-icon>
                 <strong>Home</strong>
             </div>
         </a>
-        <a href="/contact" class="item {{ Request::is('contact') ? 'active' : '' }}">
+        <a href="{{ route('contact') }}" class="item {{ Route::is('contact') ? 'active' : '' }}">
             <div class="col">
                 <ion-icon name="mail-outline"></ion-icon>
                 <strong>Contact</strong>

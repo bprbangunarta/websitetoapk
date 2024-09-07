@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Storage;
 
 class TestingController extends Controller
 {
+    public function home()
+    {
+        return view('welcome');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
     public function upload()
     {
         $ip      = ($_SERVER['REMOTE_ADDR']);
