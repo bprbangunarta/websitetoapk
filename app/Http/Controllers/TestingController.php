@@ -180,8 +180,8 @@ class TestingController extends Controller
         $headers = [
             'Accept'            => 'application/json',
             'Content-Type'      => 'application/json',
-            'x-zulfame-key'     => 'aae9e37f1dbc0c1a21f9925cf20db459e5618633e1b1ee5cb2d8e65d2bc1ff00',
-            'x-zulfame-token'   => 'SDWINAr4Gfbp3Y9bQHkDfvgIAPNxfYcRb4JZfAaDiqGeGJZ4I5R5juYu82i5'
+            'x-zulfame-key'     => '17234ed068307136a5e16e48da83f25bccb48b6ee6cec25ff7069abf78bc15a2',
+            'x-zulfame-token'   => 'RRuiu1u9BhQRUWwXwfWJlWKfBpbaCMFUvWwjeewsnTbVkxyN1g7Q3hCZjXGz'
         ];
 
         $body = [
