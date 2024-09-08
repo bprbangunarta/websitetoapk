@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TestingController::class, 'home'])->name('home');
 Route::get('contact', [TestingController::class, 'contact'])->name('contact');
 
+Route::get('/privacy', function () {
+    return view('privacy');
+});
+
 Route::prefix('testing')->group(function () {
     Route::get('upload', [TestingController::class, 'upload'])->name('testing.upload.index');
     Route::post('upload', [TestingController::class, 'upload_store'])->name('testing.upload.store');
