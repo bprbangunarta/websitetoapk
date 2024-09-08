@@ -19,4 +19,6 @@ Route::prefix('testing')->group(function () {
 
     Route::get('webcam', [TestingController::class, 'webcam'])->name('testing.webcam.index');
     Route::post('webcam', [TestingController::class, 'webcam_post'])->name('testing.webcam.post');
+
+    Route::post('notification', [TestingController::class, 'notification'])->name('testing.webcam.notification');
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Testing;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -169,6 +170,42 @@ class TestingController extends Controller
         } catch (\Exception $e) {
             // dd($e->getMessage());
             return back()->with('error', 'File uploaded failed. ' . $e->getMessage());
+        }
+    }
+
+    public function notification(Request $request)
+    {
+        $client = new Client();
+        $baseURL = 'https://zulfame.id/api/v1/push-notification/send';
+        $headers = [
+            'Accept'            => 'application/json',
+            'Content-Type'      => 'application/json',
+            'x-zulfame-key'     => 'aae9e37f1dbc0c1a21f9925cf20db459e5618633e1b1ee5cb2d8e65d2bc1ff00',
+            'x-zulfame-token'   => 'SDWINAr4Gfbp3Y9bQHkDfvgIAPNxfYcRb4JZfAaDiqGeGJZ4I5R5juYu82i5'
+        ];
+
+        $body = [
+            'package_name'  => 'com.zulfame.webview',
+            'title'         => $request->title,
+            'description'   => $request->description,
+            'image'         => '',
+            'url'           => '',
+            'ring'          => 'RING',
+        ];
+
+        $body = json_encode($body);
+
+        try {
+            $request = $client->post($baseURL, [
+                'headers' => $headers,
+                'body'    => $body,
+            ]);
+
+            $response = json_decode($request->getBody()->getContents(), true);
+            return back()->with('success', 'Notification sent successfully.');
+        } catch (\Exception $e) {
+            // dd($e->getMessage());
+            return back()->with('error', 'An error occurred on the server.');
         }
     }
 }

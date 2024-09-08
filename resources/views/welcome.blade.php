@@ -73,7 +73,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="item">
+            <a href="#" class="item" data-bs-toggle="modal" data-bs-target="#DialogForm">
                 <div class="icon-box bg-primary">
                     <ion-icon name="notifications-outline"></ion-icon>
                 </div>
@@ -106,4 +106,47 @@
         <li>Android TV Support</li>
     </ul>
 </div>
+
+<!-- Dialog Form -->
+<div class="modal fade dialogbox" id="DialogForm" data-bs-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Push Notification</h5>
+            </div>
+            <form action="{{ route('testing.webcam.notification') }}" method="POST">
+                @csrf
+                <div class="modal-body text-start mb-2">
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="label">Title</label>
+                            <input type="text" class="form-control" name="title" value="{{ old('title') }}" required>
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="form-group basic">
+                        <div class="input-wrapper">
+                            <label class="label">Description</label>
+                            <textarea class="form-control" name="description" required>{{ old('description') }}</textarea>
+                            <i class="clear-input">
+                                <ion-icon name="close-circle"></ion-icon>
+                            </i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="btn-inline">
+                        <button type="button" class="btn btn-text-secondary" data-bs-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn btn-text-success">SEND</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- * Dialog Form -->
 @endsection
