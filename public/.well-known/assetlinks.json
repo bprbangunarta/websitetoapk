@@ -1,0 +1,14 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.zulfame.webview",
+        "sha256_cert_fingerprints": [
+          "45:04:A9:4D:BB:F0:94:83:9D:D4:00:23:12:FA:B9:8F:5A:CA:06:24:20:F0:FE:53:D3:66:EB:AA:51:71:C9:B6"
+        ]
+      }
+    }
+  ]
